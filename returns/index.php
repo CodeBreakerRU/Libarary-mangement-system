@@ -1,104 +1,118 @@
+<?php
+//    require('conn.php');
+//
+//    $result = $mysqli->query("SELECT * FROM borrows where status = 'borrowed'");
+
+
+require_once "../connection.php";
+
+$query = "SELECT * FROM borrows where status = 'borrowed'";
+$result = mysqli_query($conn, $query);
+?>
+<?php include_once("../main-menu-admin.html"); ?>
 <!DOCTYPE html>
 <head>
-    <?php include_once("../main-menu-admin.html"); ?>
 
-    <title> </title>
-    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
-    <script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
-    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.1/bootstrap3-editable/css/bootstrap-editable.css" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.1/bootstrap3-editable/js/bootstrap-editable.js"></script>
+    <title> Return books </title>
 
-
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
+<br /><br />
+
+ <h2 align="center"> Return Books </h2>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="memberModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+
+                <h4 class="modal-title" id="memberModalLabel">Edit Borrowed Book Detail</h4>
+
+            </div>
+            <div class="dash">
+
+            </div>
+
+        </div>
+    </div>
+</div>
 <div class="container">
-    <br /><br />
-    <h4 align="center"> Return Book Details </h4>
-    <br />
-
-    <input type="text" id="myInput" onkeyup="myFunction()" placeholder=" Search by member ID " >
-
-    <br />
-    <table class="table table-bordered table-striped" id="myTable">
-        <thead>
-        <tr>
-            <th >ID</th>
-            <th >MEMBER ID</th>
-            <th > BOOK ID</th>
-            <th >BORROWED DATE</th>
-            <th >RETURNED DATE</th>
-            <th >STATUS</th>
-        </tr>
-        </thead>
-        <tbody id="employee_data">
-        </tbody>
-    </table>
-</body>
-</html>
 
 
+    <div class="row">
+        <div id="member" class="col-lg-12">
 
-<script type="text/javascript" language="javascript" >
-    $(document).ready(function(){
-        function fetch_employee_data()
-        {
+            <div align="right">
+                <input type="text" id="myInput" onkeyup="myFunction()" placeholder=" Search by member ID " >
+            </div>
+
+            <table class="table table-striped table-bordered"  id="myTable" >
+                <thead>
+                <tr>
+                    <th >Borrowed ID </th>
+                    <th >Member ID </th>
+                    <th >Book ID</th>
+                    <th >Borrowed Date</th>
+                    <th >Returned Date</th>
+                    <th > Status</th>
+                    <th></th>
+                </tr>
+                </thead>
+                <tbody>
+                    <?php
+                         while ($mem = mysqli_fetch_assoc($result)):
+                            echo '<tr>';
+                               echo '<td>'.$mem['brid'].'</td>';
+                               echo '<td>'.$mem['memberid'].'</td>';
+                               echo '<td>'.$mem['bookid'].'</td>';
+                               echo '<td>'.$mem['borrowed_time'].'</td>';
+                               echo '<td>'.$mem['returned_time'].'</td>';
+                             echo '<td>'.$mem['status'].'</td>';
+
+                             echo '<td>
+                                        <a class="btn btn-small btn-primary"
+                                           data-toggle="modal"
+                                           data-target="#exampleModal"
+                                           data-whatever="'.$mem['brid'].' ">Edit</a>
+                                     </td>';
+                            echo '</tr>';
+                         endwhile;
+                         /* free result set */
+                         $result->close();
+                    ?>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<script>
+    $('#exampleModal').on('show.bs.modal', function (event) {
+          var button = $(event.relatedTarget) // Button that triggered the modal
+          var recipient = button.data('whatever') // Extract info from data-* attributes
+          var modal = $(this);
+          var dataString = 'brid=' + recipient;
+
             $.ajax({
-                url:"fetch.php",
-                method:"POST",
-                dataType:"json",
-                success:function(data)
-                {
-                    for(var count=0; count<data.length; count++)
-                    {
-                        var html_data = '<tr><td>'+data[count].brid+'</td>';
-                        html_data += '<td data-name="memberid" class="memberid" data-type="text" data-pk="'+data[count].id+'">'+data[count].memberid+'</td>';
-                        html_data += '<td data-name="bookid" class="bookid" data-type="select" data-pk="'+data[count].id+'">'+data[count].bookid+'</td>';
-                        html_data += '<td data-name="borrowed_time" class="borrowed_time" data-type="text" data-pk="'+data[count].id+'">'+data[count].borrowed_time+'</td>';
-                        html_data += '<td data-name="returned_time" class="returned_time" data-type="date" data-pk="'+data[count].brid+'">'+data[count].returned_time+'</td>';
-                        html_data += '<td data-name="status" class="status" data-type="select" data-pk="'+data[count].brid+'">'+data[count].status+'</td></tr>';
-                        $('#employee_data').append(html_data);
-                    }
+                type: "GET",
+                url: "editdata.php",
+                data: dataString,
+                cache: false,
+                success: function (data) {
+                    console.log(data);
+                    modal.find('.dash').html(data);
+                },
+                error: function(err) {
+                    console.log(err);
                 }
-            })
-        }
-        fetch_employee_data();
-
-
-        $('#employee_data').editable({
-            container: 'body',
-            selector: 'td.status',
-            url: "update.php",
-            title: 'STATUS',
-            type: "POST",
-            dataType: 'json',
-            source: [{value: "BORROWED", text: "BORROWED"}, {value: "RETURNED", text: "RETURNED"}],
-            validate: function(value){
-                if($.trim(value) == '')
-                {
-                    return ' Return Status Cannot be empty !!';
-                }
-            }
-        });
-
-        $('#employee_data').editable({
-            container: 'body',
-            selector: 'td.returned_time',
-            url: "update.php",
-            title: 'Returned Date',
-            type: "POST",
-            dataType: 'json',
-            validate: function(value){
-                if($.trim(value) == '')
-                {
-                    return ' Date cannot be empty !!';
-                }
-            }
-        });
-
-    });
+            });
+    })
 </script>
-
 
 <script>
     function myFunction() {
@@ -121,4 +135,7 @@
     }
 </script>
 
+</body>
+
 <?php include_once("../main-footer.html"); ?>
+</html>
