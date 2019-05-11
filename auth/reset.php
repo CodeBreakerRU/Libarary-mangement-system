@@ -98,16 +98,24 @@ Change Password
 						<img src="images/reset.png" alt="AVATAR">
 					</span>
 
-                <div class="wrap-input100 validate-input m-t-85 m-b-35" data-validate = "New Password">
-                    <input class="input100" type="password" name="new_pass" id="new_pass" value="<?php echo $new_pass; ?>">
-                    <span class="focus-input100" data-placeholder="New Password"></span>
-                    <span class="help-block"><?php echo $new_pword_err; ?></span>
+                <div class="wrap-input100 rs1 validate-input" data-validate="Enter your Phone">
+                    <input class="input100" type="text" name="phone" id="phone" placeholder="Phone" value="<?php echo $phone; ?>">
+                    <span class="focus-input100-1"></span>
+                    <span class="focus-input100-2"></span>
                 </div>
-
-                <div class="wrap-input100 validate-input m-b-50" data-validate="Re type Password">
-                    <input class="input100" type="password" name="confirm_password" id="confirm_password">
-                    <span class="focus-input100" data-placeholder="Retype your new Password"></span>
-                    <span class="help-block"><?php echo $confirm_pword_err; ?></span>
+                <br/>
+                <div class="wrap-input100 rs1 validate-input" data-validate="Password is required" >
+                    <input class="input100" type="password" name="password" placeholder="Password" value="<?php echo $pword; ?>">
+                    <span class="help-block"><?php echo $pword_error; ?></span>
+                    <span class="focus-input100-1"></span>
+                    <span class="focus-input100-2"></span>
+                </div>
+                <br/>
+                <div class="wrap-input100 rs1 validate-input" data-validate="Password is required">
+                    <input class="input100" type="password" name="confirm_password" placeholder="Confirm Password" value="<?php echo $confirm_pword; ?>">
+                    <span class="help-block"><?php echo $confirm_pword_error; ?></span>
+                    <span class="focus-input100-1"></span>
+                    <span class="focus-input100-2"></span>
                 </div>
 
                 <div class="container-login100-form-btn">

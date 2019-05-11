@@ -10,14 +10,22 @@
 		<script src="bootstrap.min.js"></script>
 		<link rel="stylesheet" href="bootstrap.min.css">
 		<link rel="stylesheet" href="datatables.bootstrap.css">
-		
+
+    <style>
+        .dataTables_filter {
+            display: none;
+        }
+    </style>
+
+
 	</head>
 	<body ng-app="crudApp" ng-controller="crudController">
 		
 		<div class="container" ng-init="fetchData()">
-			<br />
-				<h3 align="center"> Manage members </h3>
-			<br />
+            <br />
+            <br />
+            <h3 align="center"> Edit Member Details </h3>
+
 
 			<div class="alert alert-success alert-dismissible" ng-show="success" >
 				<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
@@ -26,7 +34,12 @@
 
 			<br />
 			<div class="table-responsive" style="overflow-x: unset;">
-				<table datatable="ng" dt-options="vm.dtOptions" class="table table-bordered table-striped">
+
+                <div align="right">
+                    <input type="text" id="myInput" onkeyup="myFunction()" placeholder=" Search by member ID " >
+                </div>
+
+				<table datatable="ng" dt-options="vm.dtOptions" class="table table-bordered table-striped" id="myTable">
 					<thead>
 
 							 <th> ID Number </th>
@@ -44,7 +57,7 @@
 							 <td>{{name.address}}</td>
                             <td>{{name.phone}}</td>
 
-							<td><button type="button" ng-click="fetchSingleData(name.id)" class="btn btn-warning btn-xs"> Edit Member details </button></td>
+							<td><button type="button" ng-click="fetchSingleData(name.id)" class="btn btn-warning "> Edit Member details </button></td>
 
 						</tr>
 					</tbody>
@@ -178,5 +191,27 @@ app.controller('crudController', function($scope, $http){
 
 });
 
+</script>
+
+
+<script>
+    function myFunction() {
+        var input, filter, table, tr, td, i, txtValue;
+        input = document.getElementById("myInput");
+        filter = input.value.toUpperCase();
+        table = document.getElementById("myTable");
+        tr = table.getElementsByTagName("tr");
+        for (i = 0; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td")[0]; // col no
+            if (td) {
+                txtValue = td.textContent || td.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    tr[i].style.display = "";
+                } else {
+                    tr[i].style.display = "none";
+                }
+            }
+        }
+    }
 </script>
 

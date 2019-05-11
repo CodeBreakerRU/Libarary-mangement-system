@@ -8,19 +8,17 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 }
 
 ?>
-<header xmlns:font-weight="http://www.w3.org/1999/xhtml" xmlns:font-weight="http://www.w3.org/1999/xhtml">
 <?php include_once("main-menu.html"); ?>
 
 </header>
 <!DOCTYPE html>
-<html lang="en">
 <head>
 
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Chat Room</title>
 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" type="text/css" media="screen"
     />
 
@@ -49,7 +47,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 
         .chat #chatOutput {
             overflow-y: scroll;
-            height: 400px;
+            height: 350px;
             width: 790px;
             border: 0px solid #777;
 
@@ -59,7 +57,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
         .chat #chatOutput p {
             margin: 0;
             padding: 5px;
-            border-bottom: 1px solid #006aff;
+            border-bottom: 1px solid #fffbff;
             word-break: break-all;
         }
 
@@ -87,8 +85,8 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
         </div>
         <div class="chat" align="left">
             <div id="chatOutput"></div>
-            <input id="chatInput" type="text"  placeholder="Message" maxlength="400" onfocus="this.value=''" >
-            <button id="chatSend">Send</button>
+            <input id="chatInput" type="text"  placeholder=" Message" maxlength="400" onfocus="this.value=''" >
+            <button type="button" class="btn btn-primary" id="chatSend"> Send </button>
         </div>
     </main>
 </div>

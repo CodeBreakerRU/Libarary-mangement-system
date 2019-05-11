@@ -20,9 +20,9 @@ $result = mysqli_query($conn, $query);
 </head>
 <body>
 <br /><br />
-<div class="container" style="width:700px;">
+<div class="container">
 
-
+    <h2 align="center"> Borrow Books </h2>
     <div class="table-responsive">
         <div align="right">
 
@@ -53,7 +53,8 @@ $result = mysqli_query($conn, $query);
                         <td><?php echo $row["bname"]; ?></td>
                         <td><?php echo $row["borrowed_time"]; ?></td>
 
-                        <td><input type="button" name="delete_data" value="Delete Details" id="<?php echo $row["brid"]; ?>" class="btn btn-danger btn-xs delete_data" /></td>
+                        <td><input type="button" name="delete_data" value="Delete Details" id="<?php echo $row["brid"]; ?>" class="btn btn-danger delete_data" /></td>
+                            <!-- btn-xs-->
                     </tr>
                     <?php
                 }

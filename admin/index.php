@@ -37,7 +37,7 @@ if ($_SESSION["username"] !== 'admin')
           <h2 class="panel-title"><strong>Book Details</strong></h2>
       </div>
       <div class="col-md-6" align="right">
-       <button type="button" name="add_data" id="add_data" class="btn btn-success btn-xs">Insert a new Book</button>
+       <button type="button" name="add_data" id="add_data" class="btn btn-success ">Insert a new Book</button>
       </div>
      </div>
     </div>
