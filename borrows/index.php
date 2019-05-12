@@ -120,8 +120,6 @@ $result = mysqli_query($conn, $query);
             $('#insert_form')[0].reset();
         });
 
-
-
         $('#insert_form').on("submit", function(event)
         {
             event.preventDefault();

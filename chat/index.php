@@ -86,11 +86,20 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
         <div class="chat" align="left">
             <div id="chatOutput"></div>
             <input id="chatInput" type="text"  placeholder=" Message" maxlength="400" onfocus="this.value=''" >
-            <button type="button" class="btn btn-primary" id="chatSend"> Send </button>
+            <button type="button" class="btn btn-primary" id="chatSend" > Send </button>
         </div>
     </main>
 </div>
 
+<script>
+    var input = document.getElementById("chatInput");
+    input.addEventListener("keyup", function(event) {
+        if (event.keyCode === 13) {
+            event.preventDefault();
+            document.getElementById("chatSend").click();
+        }
+    });
+</script>
 <script>
     $(document).ready(function() {
         var chatInterval = 250; //refresh interval in ms
