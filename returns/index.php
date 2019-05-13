@@ -1,4 +1,17 @@
 <?php
+session_start();
+if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
+    header("location: ../auth/login.php");
+    exit;
+}
+
+if ($_SESSION["username"] !== 'admin')
+{
+    header("location: ../auth/error_page.php");
+}
+?>
+
+<?php
 //    require('conn.php');
 //
 //    $result = $mysqli->query("SELECT * FROM borrows where status = 'borrowed'");
@@ -47,7 +60,7 @@ $result = mysqli_query($conn, $query);
             <div align="right">
                 <input type="text" id="myInput" onkeyup="myFunction()" placeholder=" Search by member ID " >
             </div>
-
+            <br />
             <table class="table table-striped table-bordered"  id="myTable" >
                 <thead>
                 <tr>

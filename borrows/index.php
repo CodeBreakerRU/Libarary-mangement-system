@@ -1,7 +1,18 @@
+<?php
+session_start();
+if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
+    header("location: ../auth/login.php");
+    exit;
+}
+
+if ($_SESSION["username"] !== 'admin')
+{
+    header("location: ../auth/error_page.php");
+}
+?>
 
 <?php
 require_once "../connection.php";
-//$query = "SELECT * FROM borrows ORDER BY id DESC";
 
 $query = "SELECT * FROM books b, borrows br, members m WHERE br.bookid = b.id AND m.username = br.memberid";
 

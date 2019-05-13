@@ -32,3 +32,8 @@
  <label>No of copies</label>
  <input type="text" name="copies" id="copies" class="form-control" />
 </div>
+
+<div class="form-group">
+    <label> Description</label>
+    <input type="text" name="description" id="description" class="form-control" />
+</div>

@@ -27,7 +27,6 @@ if ($_SESSION["username"] !== 'admin')
 
  </head>
  <body>
-
            <h2 align="center"><strong> Manage Books </strong></h2>
 
  <div class="container">
@@ -52,13 +51,13 @@ if ($_SESSION["username"] !== 'admin')
         <tr>
 
          <td> Book ID </td>
-         <td>Name</td>
-         <td>Author</td>
-         <td>ISBN</td>
-         <td>Category</td>
-         <td>Publisher</td>
-         <td>Copies</td>
-         <td>Available copies</td>
+         <td> Name</td>
+         <td> Author</td>
+         <td> ISBN</td>
+         <td> Category</td>
+         <td> Publisher</td>
+         <td> Copies</td>
+         <td> Available copies</td>
 
             <td></td>
             <td></td><td></td>
@@ -140,6 +139,8 @@ $(document).ready(function(){
       form_data.append('category', $('#category').val());
       form_data.append('publisher', $('#publisher').val());
       form_data.append('copies', $('#copies').val());
+      form_data.append('description', $('#description').val()); // up1
+
 
       $.ajax({
        method:"POST",

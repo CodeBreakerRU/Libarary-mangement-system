@@ -12,6 +12,7 @@ if(isset($_POST["name"]))
     $category ='';
     $publisher =  '';
     $copies ='';
+    $description = '';
 
     if(empty($_POST["name"]))
     {
@@ -63,7 +64,14 @@ if(isset($_POST["name"]))
     {
         $copies = $_POST["copies"];
     }
-
+    if(empty($_POST["description"]))
+    {
+        $error .= '<p> description </p>';
+    }
+    else
+    {
+        $description = $_POST["description"];
+    }
 
     if($error == '')
     {
@@ -73,13 +81,14 @@ if(isset($_POST["name"]))
             ':isbn'  => $isbn,
             ':category' => $category,
             ':publisher'   => $publisher,
-            ':copies'  => $copies
+            ':copies'  => $copies,
+            ':description' => $description
         );
 
         $query = "
   INSERT INTO books
-  (bname, author, isbn, category, publisher, copies) 
-  VALUES (:name, :author, :isbn, :category, :publisher, :copies)
+  (bname, author, isbn, category, publisher, copies, description) 
+  VALUES (:name, :author, :isbn, :category, :publisher, :copies , :description)
   ";
 
         $statement = $connect->prepare($query);
