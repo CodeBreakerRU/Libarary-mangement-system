@@ -66,6 +66,11 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     <a href="change.php" class="btn btn-default">Change Your Password</a>
     <a href="logout.php" class="btn btn-default">Sign Out of Your Account</a>
 </p>
+    <div>
+        <a href="../admin" class="btn btn-warning"> Administration </a>
+
+    </div>
+
 
 </body>
 </html>

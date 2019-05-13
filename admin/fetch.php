@@ -6,7 +6,7 @@ $output = array();
 $query .= "SELECT * FROM books ";
 if(isset($_POST["search"]["value"]))
 {
- $query .= 'WHERE bname LIKE "%'.$_POST["search"]["value"].'%" OR author LIKE "%'.$_POST["search"]["value"].'%" OR isbn LIKE "%'.$_POST["search"]["value"].'%" OR category LIKE "%'.$_POST["search"]["value"].'%" OR publisher LIKE "%'.$_POST["search"]["value"].'%" ';
+ $query .= 'WHERE bname LIKE "%'.$_POST["search"]["value"].'%" ';
 }
 if(isset($_POST["order"]))
 {
@@ -28,6 +28,7 @@ $filtered_rows = $statement->rowCount();
 foreach($result as $row)
 {
  $sub_array = array();
+    $sub_array[] = $row["id"];
  $sub_array[] = $row["bname"];
  $sub_array[] = $row["author"];
  $sub_array[] = $row["isbn"];

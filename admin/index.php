@@ -27,33 +27,36 @@ if ($_SESSION["username"] !== 'admin')
 
  </head>
  <body>
-  <div class="container">
+
+           <h2 align="center"><strong> Manage Books </strong></h2>
+
+ <div class="container">
    <br />
    <br />
    <div class="panel panel-default">
     <div class="panel-heading">
      <div class="row">
       <div class="col-md-6">
-          <h2 class="panel-title"><strong>Book Details</strong></h2>
       </div>
       <div class="col-md-6" align="right">
        <button type="button" name="add_data" id="add_data" class="btn btn-success ">Insert a new Book</button>
       </div>
      </div>
     </div>
+
     <div class="panel-body">
      <div class="table-responsive" >
       <span id="form_response"></span>
-      <table id="user_data" class="table table-bordered table-striped" style="width:100%">
+      <table id="user_data" class="table table-bordered table-striped" >
        <thead>
         <tr>
+
+         <td> Book ID </td>
          <td>Name</td>
          <td>Author</td>
          <td>ISBN</td>
          <td>Category</td>
-
          <td>Publisher</td>
-
          <td>Copies</td>
          <td>Available copies</td>
 
@@ -87,7 +90,7 @@ $(document).ready(function(){
 
   "columnDefs":[
    {
-    "targets":[0,1,2,3,4,5,6,7,8,9],
+    "targets":[0,1,2,3,4,5,6,7,8,9,10],
     "orderable":false,
    },
   ],
