@@ -1,9 +1,9 @@
 <?php
 
-$username = 'admin';
-$pword = 'toor';
+$username = 'root';
+$pword = '';
 $connect = new PDO( 'mysql:host=localhost;dbname=library', $username, $pword );
 
-$conn = mysqli_connect("localhost", "admin", "toor", "library");
+$conn = mysqli_connect("localhost", "root", "", "library");
 
 ?> 

@@ -24,6 +24,7 @@ foreach($result as $row)
 {
  $sub_array = array();
 
+ $sub_array[] = $row["id"];
  $sub_array[] = $row["bname"];
  $sub_array[] = $row["author"];
  $sub_array[] = $row["isbn"];

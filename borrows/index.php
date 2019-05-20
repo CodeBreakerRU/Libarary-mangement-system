@@ -59,13 +59,13 @@ $result = mysqli_query($conn, $query);
                     <tr>
                         <td><?php echo $row["brid"]; ?></td>
                         <td><?php echo $row["memberid"]; ?></td>
-                        <td ><?php echo $row["name"]; ?></td>
+                        <td><?php echo $row["name"]; ?></td>
                         <td><?php echo $row["bookid"]; ?></td>
                         <td><?php echo $row["bname"]; ?></td>
                         <td><?php echo $row["borrowed_time"]; ?></td>
 
                         <td><input type="button" name="delete_data" value="Delete Details" id="<?php echo $row["brid"]; ?>" class="btn btn-danger delete_data" /></td>
-                            <!-- btn-xs-->
+
                     </tr>
                     <?php
                 }

@@ -42,6 +42,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
        <thead>
         <tr>
 
+         <td> Book ID </td>
          <td>Name</td>
          <td>Author</td>
          <td>ISBN</td>

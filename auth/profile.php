@@ -52,13 +52,9 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
         echo "<h4> Name : <strong> " . $row['name'] . " </strong> </h4>";
         echo "<h4> Address : <strong> " . $row['address'] . " </strong> </h4>";
         echo "<h4> Phone : <strong> " . $row['phone'] . " </strong> </h4>";
-
-
     }
 
 ?>
-
-
     <div>
 </div>
 
