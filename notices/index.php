@@ -51,11 +51,11 @@ $result = mysqli_query($conn, $query);
 <div class="container" id="notice">
     <table  class="table table-bordered" >
         <tr>
-            <th >Borrow No</th>
-            <th >Member ID</th>
-            <th >Member Name</th>
+            <th >Notice ID</th>
+            <th >Topic</th>
+            <th >Content</th>
 
-            <th></th>
+            <th>Delete</th>
         </tr>
 
         <?php
