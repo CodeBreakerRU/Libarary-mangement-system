@@ -148,12 +148,7 @@ CREATE TABLE `members` (
 INSERT INTO `members` (`id`, `username`, `name`, `address`, `phone`) VALUES
 (11, 'admin', 'Administrator', 'Colombo, Sri Lanka', '0714329761'),
 (12, 'IT16', 'Rasika Liyanaarachchi', 'Colombo, Sri Lanka', '94714329761'),
-(14, 'it17', 'Vinura', 'Canada', '+1911911911'),
-(15, 'IT16107960', 'Isuru Sandaruwan', 'No 78,malabe', '0719176465'),
-(17, '981234567V', 'Chethana Adikari Ranodya', 'New Kandy Road, Badulla', '077123123'),
-(18, 'it16081208', 'ranodya', 'uduwara,haliela,badulla', '0769876543'),
-(20, 'vishvi', 'V.R.Dayarathne', 'haliela,Badulla.', '0778821277'),
-(21, 'IT16018624', 'Nadeekshani Prabodhya', 'No 1/2, Lewella, Kandy', '0715685942');
+
 
 -- --------------------------------------------------------
 
@@ -197,11 +192,11 @@ CREATE TABLE `users` (
 INSERT INTO `users` (`id`, `username`, `password`) VALUES
 (11, 'admin', '$2y$10$AxWKsRzoCVE7aBF2XeorCeuXDvQzYSVbBLXTxvQU6zklPNBDHCahW'),
 (12, 'IT16', '$2y$10$xU8Zll2k0c8X3g0btGT9w.FSsJVBheufaLHmLVbRkjwqGqRZNebhW'),
-(14, 'it17', '$2y$10$RS1X5U6n7E5mXFtrHGagy.wGeWB/z8EWsOtMPg7DJ6epOofYYgWwe'),
+(14, 'IT17', '$2y$10$RS1X5U6n7E5mXFtrHGagy.wGeWB/z8EWsOtMPg7DJ6epOofYYgWwe'),
 (15, 'IT16107960', '$2y$10$J09Lu1EMuznoP23tlQgORe8vp0BbuFuUqz1K2Da7rIqKP7jRIX.MW'),
-(17, '981234567V', '$2y$10$aaomTLn1f5vvBimy9ChTmuK6yxCtwN8pJJ9wQ56Aa6Ft2GOglOJBe'),
-(18, 'it16081208', '$2y$10$i3zUgxS4Z.nFE8crIPn5O.DqrXQxR.dulCl7PBE4Mali18Hsu4LrG'),
-(21, 'vishvi', '$2y$10$7UD2govbfTre39ETH1ixbOe.1wx6jA9b825mHXYmb2e9ACbQVfze2'),
+(17, 'IT16107961', '$2y$10$aaomTLn1f5vvBimy9ChTmuK6yxCtwN8pJJ9wQ56Aa6Ft2GOglOJBe'),
+(18, 'IT16081208', '$2y$10$i3zUgxS4Z.nFE8crIPn5O.DqrXQxR.dulCl7PBE4Mali18Hsu4LrG'),
+(21, 'vish', '$2y$10$7UD2govbfTre39ETH1ixbOe.1wx6jA9b825mHXYmb2e9ACbQVfze2'),
 (22, 'IT16018624', '$2y$10$Q/sPzmGP.J7ViiSYlIGvwOVAe/pEN/ITZYpH6qIbXD81O1.C6.3xC');
 
 --
