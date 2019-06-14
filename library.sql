@@ -125,7 +125,7 @@ CREATE TABLE `contact` (
 
 INSERT INTO `contact` (`message_id`, `username`, `title`, `email`, `message`) VALUES
 (5, 'admin ', 'Test Title', 'test@mail.com', 'Test Message !! abcdefghijklmnopqrstuvwxyz'),
-(6, 'IT16 ', 'I need to talk with you madm', 'vranodya78@gmail.com', 'dear madam,\r\ni need to talk with you today evening if u free let me know.i have to say something urgent thing about library.');
+(6, 'IT16 ', 'I need to talk with you madm', 'vr@gmail.com', 'dear madam,\r\ni need to talk with you today evening if u free let me know.i have to say something urgent thing about library.');
 
 -- --------------------------------------------------------
 
