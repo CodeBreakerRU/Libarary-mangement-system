@@ -36,5 +36,13 @@ DELETE Books <br />
 ADD Borrowed books info </br>
 ADD Returned books info </br>
 
+<b> Install instructions :</b> <br />
+<ol>
+  <li> Clone this repository </li> <br />
+  <li> Create a Database and import library.sql File </li> <br />
+  <li> Edit connection.php File </li> <br /> 
+  <li> Run it on a web server </li> <br />
+</ ol>
+
 <b> Created By using: </b> <br />
 Bootstrap, PHP, MYSQL, JavaScript, AJAX , Angular JS, jQuery, Datatables https://datatables.net/
