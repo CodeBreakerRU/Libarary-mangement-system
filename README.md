@@ -19,15 +19,15 @@ Search Books <br />
 View Books Info <br />
 View Borrowed Books <br />
 
-<b> Chat Room </b> <br />
+<b> Chat Room: </b> <br />
 Send Messages <br />
 
-<b> Libarary Notice Page </b> <br />
+<b> Libarary Notice Page: </b> <br />
 Create Notices <br />
 View Notices <br />
 Delete Notices <br />
 
-<b> Librarian </b> </br>
+<b> Librarian: </b> </br>
 ADD Books <br /> 
 UPDATE Books <br />
 EDIT Books <br />
