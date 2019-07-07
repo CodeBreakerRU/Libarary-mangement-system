@@ -45,4 +45,4 @@ ADD Returned books info </br>
 </ ol>
 
 <b> Created By using: </b> <br />
-Bootstrap, PHP, MYSQL, JavaScript, AJAX , Angular JS, jQuery, Datatables https://datatables.net/
+Bootstrap, PHP, MYSQL, JavaScript, AJAX , Angular JS, jQuery, Datatables
