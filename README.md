@@ -3,7 +3,7 @@
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=cs-riley_Libarary-mangement-system&metric=alert_status)](https://sonarcloud.io/dashboard?id=cs-riley_Libarary-mangement-system)
 [![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=cs-riley_Libarary-mangement-system&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=cs-riley_Libarary-mangement-system)
 
-Demo Site : <a href="https://library.cloud.rileyghost.com"> library.cloud.rileyghost.com</a>
+Demo Site : <a href="https://demo.rileyghost.com/library"> demo.rileyghost.com/library</a>
 
 <b>Users: </b> <br />
 Login <br />
